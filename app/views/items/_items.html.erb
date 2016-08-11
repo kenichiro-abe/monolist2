@@ -6,8 +6,8 @@
           <div class="img-wrap">
             <% #TODO 商品画像 %>
             
-            <% if item['imageFlag'] then %>
-              <%image_pic = item['mediumImageUrls'][0]['imageUrl'].gsub('?_ex=128x128', '') %>
+            <% if item['imageFlag'] == 1 %>
+              <%image_pic = item['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '') %>
             <% else %>
               <% image_pic = "no-image.png" %>
             <% end %>
