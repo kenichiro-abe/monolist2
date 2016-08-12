@@ -43,7 +43,8 @@ class User < ActiveRecord::Base
   end
 
   def have?(item)
-    haves.include?(item)
+    #binding.pry
+    have_items.include?(item)
   end
 
   def want(item)
@@ -56,7 +57,8 @@ class User < ActiveRecord::Base
   end
 
   def want?(item)
-    wants.include?(item)
+    #binding.pry
+    want_items.include?(item)
   end
   
   def item_status_want? (item_code) #検証中
