@@ -1,6 +1,11 @@
 <div class="container">
   <div class="container-inner inner-sm clearfix">
-    <>
+    <% content_for :metainfo do %>
+      <meta property="title" content="<%= @item.title %> - monolist" />
+      <meta property="type" content="アイテムページ" />
+      <meta property="description" content="<%= @item.title %>に関する情報です。この商品を欲しい人、持ってる人を表示しています。" />
+    <% end %>
+    
     <div class="item-single-main">
       <div class="image">
         <div class="img-wrap">
