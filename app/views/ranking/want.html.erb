@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="container-inner inner-sm clearfix">
+    <% content_for :metainfo do %>
+      <meta property="title" content="ranking page" />
+      <meta property="type" content="<%= @select_have_want %> された商品ranking " />
+      <meta property="description" content="<%= @select_have_want %>に関する情報です。1位から10位までを表示します。" />
+    <% end %>
+    
+    <%= render 'have_want'  %>
+    <hr />
+    <%= render 'have_want_ranking'%>
+  </div>
+</div>
