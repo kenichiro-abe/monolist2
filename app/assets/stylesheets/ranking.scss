@@ -1,0 +1,77 @@
+.item_ranking .row {
+  height: 200px;
+  margin: 15px;
+  float: left;
+  background: #fafafa;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  position: relative;
+  .col-md-2 {
+    border: 1px solid #ddd;
+    border-top: 0;
+      .rank-no {
+            height: 200px;
+            width: 200px;
+            font-size: 30px;
+            font-weight: bold;
+            background: #fafafa;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+      }
+  }
+  .col-md-4 {
+    border: 1px solid #ddd;
+    border-top: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+      .img-wrap {
+        width: 300px;
+        height: 200px;
+        /*padding: 10px;*/
+        background: #fafafa;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        img {
+          max-height: 200px;
+        }
+      }
+  }
+  .col-md-6 {
+        border: 1px solid #ddd;
+        border-top: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+      .detail {
+        height: 200px;
+        width: 600px;
+        /*padding: 10px;*/
+        background: #fafafa;
+        font-size: 20px;
+        .title {
+          margin: 0;
+          overflow : hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+      }
+    }
+}
+.ranking_head {
+    height: 120px;
+    width: 100%;
+    background: #fafafa;
+    .ranking_title {
+        height: 50px;
+        font-size: 30px;
+        font-weight: bold;
+        color: red;
+    }
+    .ranking_description {
+        height: 50px;
+        font-size: 20px;
+        color: black;
+    }
+}
