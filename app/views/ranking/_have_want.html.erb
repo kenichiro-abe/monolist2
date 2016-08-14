@@ -1,0 +1,11 @@
+<div class="ranking_head">
+    <div class="ranking_title"> <%= @select_have_want.capitalize %> のランキングページ！</div>
+    <div class="ranking_description">
+        <%= @select_have_want.capitalize %> している人が多いランキングのページです。
+    </div>
+    <% if @select_have_want == "have" %>
+        <div class="other_ranking"> WantのRankingランキングは<%= link_to "こちら" , "/ranking/want"  %> </div>
+    <% elsif @select_have_want == "want" %>
+        <div class="other_ranking"> HaveのRankingランキングは<%= link_to "こちら" , "/ranking/have"  %> </div>
+    <% end %>
+</div>

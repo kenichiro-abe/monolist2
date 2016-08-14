@@ -1,5 +1,8 @@
-<% users.each do |user| %>
-    <span class="gravatar_pic">
-        <%= link_to gravatar_for(user, size: 20), user %>
-	</span>
-<% end %>
+<div class="user_avatars">
+    <% users.each do |user| %>
+        <div>
+            <span class="gravatar_pic"><%= link_to gravatar_for(user, size: 30), user %></span>
+            <p class="arrow_box"><%= user.name %></p>
+        </div>
+    <% end %>
+</div>
