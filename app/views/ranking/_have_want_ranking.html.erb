@@ -1,17 +1,11 @@
 <div class="item_ranking" >
-<%#= @select_have_want %>
-<% 10.times do |i| %>
-    <% if @want_user_list.count.to_i - 1 == i %>
-        <% break %>
-    <% end %>
-    <% item = Item.find_by(id: @want_user_list[i][0]) %>
+
+<% @sort_rank_list.each.with_index(1) do |item, index| %>
     <div class="row">
-        <div class="col-md-2">
-            <div class="rank-no">
-            <%= i+1 %>位
-            </div>
+        <div class="col-md-1">
+            <span class="rank-no"><%= index %></span>位
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3" style="max-width:180px;">
           <div class="img-wrap">
             <% #TODO 商品画像 %>
             
@@ -20,23 +14,29 @@
             <% else %>
               <% image_pic = item.large_image %>
             <% end %>
-            
-            <%= image_tag(image_pic , alt: item.title) %>
-    
+            <div>
+                <%= link_to image_tag(image_pic , alt: item.title, style: "width:100%;") , "/items/#{item.id}" %>
+            </div>
           </div>
         </div>
         
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="detail">
-                <div>
-                    <%= item.title %>
+                <div class="title">
+                    タイトル：<%= item.title %>
                 </div>
-                <div>
-                    件数：<%= @want_user_list[i][1] %>
+                <!--div class="description">
+                    詳細：<%#= item.description %>
+                </div-->
+                <div class="have-want-count">
+                    <%= (@select_have_want == "have") ? item.have_users.count : item.want_users.count %> <%= @select_have_want %>!!
+                </div>
+                <div class="rakuten_link">
+                    <%= link_to('楽天詳細ページへ', item.detail_page_url) %>
                 </div>
             </div>
         </div>
     </div>
-    <hr />
+    <!--hr /-->
 <% end %>
 </div>
