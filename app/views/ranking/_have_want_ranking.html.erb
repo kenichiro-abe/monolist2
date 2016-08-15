@@ -23,11 +23,11 @@
         <div class="col-md-8">
             <div class="detail">
                 <div class="title">
-                    タイトル：<%= item.title %>
+                    <%= link_to item.title , "/items/#{item.id}" %>
                 </div>
-                <!--div class="description">
-                    詳細：<%#= item.description %>
-                </div-->
+                <div class="description">
+                    詳細：<%= item.description.blank? ? "---" : ("<br>" + item.description.truncate(200, separator: /\s/)).html_safe %>
+                </div>
                 <div class="have-want-count">
                     <%= (@select_have_want == "have") ? item.have_users.count : item.want_users.count %> <%= @select_have_want %>!!
                 </div>

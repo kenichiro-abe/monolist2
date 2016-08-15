@@ -15,6 +15,8 @@ class RankingController < ApplicationController
   
   
   def get_want_user_list
+    
+=begin
     rank_list = []
     items = Item.all
     items.each do |item|
@@ -34,8 +36,15 @@ class RankingController < ApplicationController
       end
       #binding.pry
     end
+    
+=end
+    @rankings = Want.group(:item_id).order('count_item_id desc').limit(10).count('item_id')
+    item_ids = @rankings.keys
+    @sort_rank_list = Item.find(item_ids).sort_by{|o| item_ids.index(o.id)}
+    
   end
   def get_have_user_list
+=begin
     rank_list = []
     items = Item.all
     items.each do |item|
@@ -55,6 +64,11 @@ class RankingController < ApplicationController
       end
       #binding.pry
     end
+    
+=end
+    @rankings = Have.group(:item_id).order('count_item_id desc').limit(10).count('item_id')
+    item_ids = @rankings.keys
+    @sort_rank_list = Item.find(item_ids).sort_by{|o| item_ids.index(o.id)}
     
     
     #[昇順,降順]
